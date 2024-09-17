@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted  # Assuming you are using a GitHub Runner on your own infrastructure
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
