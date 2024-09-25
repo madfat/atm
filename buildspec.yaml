@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging into Amazon ECR...
+      - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 872583825157.dkr.ecr.ap-southeast-1.amazonaws.com\
+      - echo Build is starting...
+  build:
+    commands:
+      - echo Building the JAR...
+      - mvn clean package -DskipTests
+      - echo Building the Docker image...
+      - docker build -t atm:latest .
+      - docker tag atm:latest 872583825157.dkr.ecr.ap-southeast-1.amazonaws.com/atm:latest
+  post_build:
+    commands:
+      - echo Pushing the Docker image to ECR...
+      - docker push 872583825157.dkr.ecr.ap-southeast-1.amazonaws.com/atm:latest
+artifacts:
+  files:
+    - target/*.jar
