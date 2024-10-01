@@ -14,4 +14,4 @@ This repository was created in order to implement the requirement on https://git
 - Clone the repository: ```git clone https://github.com/madfat/atm_1.git atm_simulation```
 - Get inside the project directory: ```cd atm_simulation```
 - Checkout the tagged code: ```git checkout stage3```
-- Run the apps using maven command: ```mvn spring-boot:run``` 
+- Run the apps using maven command: ```mvn spring-boot:run```
