@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atm
+  namespace: atm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: atm
+  template:
+    metadata:
+      labels:
+        app: atm
+    spec:
+      containers:
+        - name: learn/atm
+          image: 442387259505.dkr.ecr.ap-southeast-1.amazonaws.com/learn/atm:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "dev"
+      imagePullSecrets:
+        - name: ecr-registry-secret
