@@ -14,7 +14,7 @@ spec:
         app: atm
     spec:
       containers:
-        - name: learn/atm
+        - name: atm
           image: 442387259505.dkr.ecr.ap-southeast-1.amazonaws.com/learn/atm:latest
           ports:
             - containerPort: 8080
