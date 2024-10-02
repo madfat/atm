@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: atm
-          image: 442387259505.dkr.ecr.ap-southeast-1.amazonaws.com/learn/atm:latest
+          image: 442387259505.dkr.ecr.ap-southeast-1.amazonaws.com/learn/atm
           ports:
             - containerPort: 8080
           env:
